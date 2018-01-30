@@ -21,7 +21,12 @@
 
 <script type="text/javascript">
 var $imgs = [
-{area: '上海', url:'1.jpg'},{area: '广州', url:'2.jpg'},{area: '大连', url:'3.jpg'},{area: '南宁', url:'4.jpg'},{area: '南昌', url:'5.jpg'},{area: '拉萨', url:'5.jpg'}]
+{area: '上海', url:'1.jpg'},
+{area: '广州', url:'2.jpg'},
+{area: '大连', url:'3.jpg'},
+{area: '南宁', url:'4.jpg'},
+{area: '南昌', url:'5.jpg'},
+{area: '拉萨', url:'5.jpg'}]
 function getEcharts(){
 
     require.config({
@@ -268,12 +273,12 @@ function getEcharts(){
 									label:{show:true,
 										  position:'top',
 										  textStyle: {
-													fontSize: 20,
+													fontSize: 12,
                                                     color:"#000"
 												},
 											formatter:(params)=>{
 											console.log(params.name)
-											return params.name
+											return "信融"+params.name+"分公司"
 										}	
 										  }
 								},
