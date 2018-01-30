@@ -47,9 +47,10 @@ function getEcharts(){
 		                for(var i = 0;i<$imgs.length;i++){
 		                    if($imgs[i].area == $pna){
 		                        res = '<img src="'+ $imgs[i].url +'" />';//设置自定义数据的模板，这里的模板是图片
-		                        console.log(params);
 		                        break;
-							}			
+							}else{
+		                        res=$pna
+							}
 		                }
 		                return res;
 		            }
@@ -58,15 +59,15 @@ function getEcharts(){
 					{
 						name: '全国',
 						type: 'map',
-						roam: true,
-						hoverable: false,
+						roam: false,
+//						hoverable: false,
 						mapType: 'china',
 						itemStyle:{
 							normal:{
-								borderColor:'#ccc',
-								borderWidth:0.5,
+								borderColor:"#000",
+								borderWidth:1,
 								areaStyle:{
-									color: '#f5f5f5'
+									color: 'red',
 								}
 							}
 						},
@@ -262,8 +263,12 @@ function getEcharts(){
 										  position:'top',
 										  textStyle: {
 													fontSize: 20,
-
-												}
+                                                    color:"#000"
+												},
+											formatter:(params)=>{
+											console.log(params.name)
+											return params.name
+										}	
 										  }
 								},
 								emphasis: {
